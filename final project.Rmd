@@ -1,0 +1,27 @@
+---
+title: "141sl Final Project"
+author: "Huiwen Duan"
+date: "5/6/2019"
+output: html_document
+---
+```{r}
+wm<-read.csv("wm data.csv")
+dim(wm)
+names(wm)
+summary(wm$Verbal.W)
+
+summary(wm$Verbal.W)
+
+plot(wm$Verbal.W)
+plot(wm$Spatial.W)
+
+wm_measure<-0.5*wm$Verbal.W+0.5*wm$Spatial.W
+scale(wm_measure,0.5,1)
+summary(wm)
+wm<-wm[,1:37]
+m1<-lm(Reaction~gender+,data=wm)
+summary(m1)
+cor(wm[,1:37])
+
+```
+
